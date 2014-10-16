@@ -5,6 +5,11 @@ user 'jenkins' do
   shell '/bin/bash'
 end
 
+group 'jenkins' do
+  members ['jenkins']
+  action :create
+end
+
 file '/home/jenkins/.ssh/authorized_users' do
   owner 'jenkins'
   group 'jenkins'

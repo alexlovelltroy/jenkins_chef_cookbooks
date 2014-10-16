@@ -17,6 +17,11 @@ file "#{node[:jenkins][:master][:home]}/.ssh/id_rsa" do
   action :create
 end
 
+# Set the private key on the Jenkins executor
+ruby_block 'set private key' do
+  block { node.run_state[:jenkins_private_key] = node[:jenkins][:private_key] }
+end
+
 jenkins_password_credentials 'admin' do
   description 'Admin'
   password node[:jenkins][:password]
