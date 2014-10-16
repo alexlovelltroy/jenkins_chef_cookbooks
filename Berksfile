@@ -1,7 +1,4 @@
 source "https://supermarket.getchef.com"
 
-cookbook 'jenkins'
-cookbook 'yum', '= 2.4.2'
-#cookbook 'rvm', github: 'fnichol/chef-rvm'
-cookbook 'python'
-cookbook 'firefox'
+# Our Cookbooks
+cookbook 'bb_jenkins', path: './site-cookbooks/bb_jenkins'
