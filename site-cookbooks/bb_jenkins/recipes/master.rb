@@ -9,7 +9,7 @@ directory "#{node[:jenkins][:master][:home]}/.ssh" do
   action :create
 end
 
-file '/home/jenkins/.ssh/id_rsa' do
+file "#{node[:jenkins][:master][:home]}/.ssh/id_rsa" do
   owner "#{node[:jenkins][:master][:user]}"
   group "#{node[:jenkins][:master][:group]}"
   mode '0755'
