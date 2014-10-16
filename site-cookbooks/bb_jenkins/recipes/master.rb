@@ -36,7 +36,7 @@ end
   s3
   ws-cleanup
   scm-sync-configuration
-].each do |site|
+].each do |plugin|
   jenkins_plugin plugin do
     notifies :restart, 'service[jenkins]'
   end
