@@ -3,7 +3,7 @@ include_recipe "nodejs::nodejs_from_binary"
 user 'jenkins' do
   comment 'Jenkins User'
   gid 'users'
-  home '/home/jenkins'
+  home '/var/lib/jenkins'
   shell '/bin/bash'
 end
 
@@ -12,7 +12,15 @@ group 'jenkins' do
   action :create
 end
 
-file '/home/jenkins/.ssh/authorized_users' do
+directory '/var/lib/jenkins/.ssh' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  recursive true
+  action :create
+end
+
+file '/var/lib/jenkins/.ssh/authorized_users' do
   owner 'jenkins'
   group 'jenkins'
   mode '0755'

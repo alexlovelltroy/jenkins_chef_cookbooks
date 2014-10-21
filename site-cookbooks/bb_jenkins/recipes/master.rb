@@ -45,6 +45,9 @@ file "#{node[:jenkins][:master][:home]}/.ssh/id_rsa" do
   action :create
 end
 
+# TODO: If this is the first run, we need to create the admin user with a public key
+# For now this was done on jenkins after it was installed and then we re-run this with success
+
 # Set the private key on the Jenkins executor
 ruby_block 'set private key' do
   block { node.run_state[:jenkins_private_key] = node[:jenkins][:private_key] }
@@ -74,4 +77,3 @@ end
     notifies :restart, 'service[jenkins]'
   end
 end
-

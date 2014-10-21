@@ -1,3 +1,8 @@
+# Set the private key on the Jenkins executor
+ruby_block 'set private key' do
+  block { node.run_state[:jenkins_private_key] = node[:jenkins][:private_key] }
+end
+
 # This gets ran on jenkins master when new slaves are spawned
 node[:opsworks][:layers][:jenkins_slave][:instances].each do |name, slave|
   if slave[:status] == "online"
