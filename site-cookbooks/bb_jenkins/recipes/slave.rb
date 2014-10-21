@@ -20,7 +20,7 @@ directory '/var/lib/jenkins/.ssh' do
   action :create
 end
 
-file '/var/lib/jenkins/.ssh/authorized_users' do
+file '/var/lib/jenkins/.ssh/authorized_keys' do
   owner 'jenkins'
   group 'jenkins'
   mode '0755'

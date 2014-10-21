@@ -40,7 +40,7 @@ end
 file "#{node[:jenkins][:master][:home]}/.ssh/id_rsa" do
   owner "#{node[:jenkins][:master][:user]}"
   group "#{node[:jenkins][:master][:group]}"
-  mode '0755'
+  mode '600'
   content node[:jenkins][:private_key]
   action :create
 end
