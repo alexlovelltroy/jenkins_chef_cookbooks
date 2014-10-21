@@ -1,5 +1,6 @@
 include_recipe 'java'
 include_recipe 'jenkins::master'
+include_recipe "nodejs::nodejs_from_binary"
 
 directory "#{node[:jenkins][:master][:home]}/.ssh" do
   owner "#{node[:jenkins][:master][:user]}"
@@ -46,3 +47,6 @@ end
     notifies :restart, 'service[jenkins]'
   end
 end
+
+nodejs_npm 'grunt'
+nodejs_npm 'gulp'

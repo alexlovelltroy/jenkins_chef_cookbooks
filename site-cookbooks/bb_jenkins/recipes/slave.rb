@@ -1,3 +1,5 @@
+include_recipe "nodejs::nodejs_from_binary"
+
 user 'jenkins' do
   comment 'Jenkins User'
   gid 'users'
