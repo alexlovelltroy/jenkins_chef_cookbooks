@@ -2,6 +2,33 @@ include_recipe 'java'
 include_recipe 'jenkins::master'
 include_recipe "nodejs::nodejs_from_binary"
 
+nodejs_npm 'grunt'
+nodejs_npm 'gulp'
+nodejs_npm 'css-sprite'
+nodejs_npm 'gulp-angular-templatecache'
+nodejs_npm 'gulp-cached'
+nodejs_npm 'gulp-changed'
+nodejs_npm 'gulp-clean'
+nodejs_npm 'gulp-concat'
+nodejs_npm 'gulp-if'
+nodejs_npm 'gulp-imagemin'
+nodejs_npm 'gulp-inject'
+nodejs_npm 'gulp-jshint'
+nodejs_npm 'gulp-less'
+nodejs_npm 'gulp-minify-css'
+nodejs_npm 'gulp-ng-annotate'
+nodejs_npm 'gulp-rename'
+nodejs_npm 'gulp-sourcemaps'
+nodejs_npm 'gulp-template'
+nodejs_npm 'gulp-uglify'
+nodejs_npm 'gulp-util'
+nodejs_npm 'imagemin-pngcrush'
+nodejs_npm 'jshint-stylish'
+nodejs_npm 'merge-stream'
+nodejs_npm 'npm'
+nodejs_npm 'yargs'
+
+
 directory "#{node[:jenkins][:master][:home]}/.ssh" do
   owner "#{node[:jenkins][:master][:user]}"
   group "#{node[:jenkins][:master][:group]}"
@@ -48,5 +75,3 @@ end
   end
 end
 
-nodejs_npm 'grunt'
-nodejs_npm 'gulp'
