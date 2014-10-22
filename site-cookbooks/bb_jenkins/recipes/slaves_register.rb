@@ -12,7 +12,7 @@ node[:opsworks][:layers][:jenkins_slave][:instances].each do |name, slave|
       host        slave[:ip]
       user        'jenkins'
       remote_fs   '/var/lib/jenkins'
-      credentials 'admin'
+      credentials 'jenkins'
       executors 2 # TODO: make this dynamic based off of instance type
     end
   end
