@@ -11,6 +11,8 @@ node[:opsworks][:layers][:jenkins_slave][:instances].each do |name, slave|
       labels      ['executor']
       host        slave[:ip]
       user        'jenkins'
+      remote_fs   '/var/lib/jenkins'
+      credentials node[:jenkins][:password]
     end
   end
 end
