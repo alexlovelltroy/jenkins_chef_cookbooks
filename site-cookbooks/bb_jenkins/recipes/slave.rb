@@ -1,3 +1,4 @@
+include_recipe 'java'
 include_recipe "nodejs::nodejs_from_binary"
 
 user 'jenkins' do
@@ -12,9 +13,16 @@ group 'jenkins' do
   action :create
 end
 
+directory '/var/lib/jenkins' do
+  owner 'jenkins'
+  group 'jenkins'
+  mode '0755'
+  action :create
+end
+
 directory '/var/lib/jenkins/.ssh' do
-  owner 'root'
-  group 'root'
+  owner 'jenkins'
+  group 'jenkins'
   mode '0755'
   recursive true
   action :create

@@ -59,6 +59,12 @@ jenkins_password_credentials 'admin' do
   notifies :restart, 'service[jenkins]'
 end
 
+jenkins_private_key_credentials 'jenkins' do
+  description 'Jenkins ssh'
+  private_key node[:jenkins][:private_key]
+  notifies :restart, 'service[jenkins]'
+end
+
 %w[
   git
   thinBackup
