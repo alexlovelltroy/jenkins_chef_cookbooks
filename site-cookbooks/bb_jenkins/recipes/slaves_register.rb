@@ -15,5 +15,14 @@ node[:opsworks][:layers][:jenkins_slave][:instances].each do |name, slave|
       credentials 'jenkins'
       executors 2 # TODO: make this dynamic based off of instance type
     end
+
+    # Force a reconnect in case things changes
+    jenkins_ssh_slave name do
+      action :online
+    end
+
+    jenkins_ssh_slave name do
+      action :connect
+    end
   end
 end
