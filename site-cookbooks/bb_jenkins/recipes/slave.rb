@@ -1,5 +1,4 @@
-include_recipe 'java'
-include_recipe "nodejs::nodejs_from_binary"
+include_recipe 'bb_jenkins::dependencies'
 
 user 'jenkins' do
   comment 'Jenkins User'
