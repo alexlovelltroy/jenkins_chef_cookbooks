@@ -24,5 +24,5 @@ nodejs_npm 'gulp-util'
 nodejs_npm 'imagemin-pngcrush'
 nodejs_npm 'jshint-stylish'
 nodejs_npm 'merge-stream'
-nodejs_npm 'npm'
+# nodejs_npm 'npm' #TODO: fix this, it was breaking the recipe
 nodejs_npm 'yargs'
