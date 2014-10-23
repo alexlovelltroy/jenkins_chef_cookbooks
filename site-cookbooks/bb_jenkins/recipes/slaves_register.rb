@@ -25,4 +25,6 @@ node[:opsworks][:layers][:jenkins_slave][:instances].each do |name, slave|
       action :connect
     end
   end
+  # TODO: it would be cleanest here to somehow get a list of jenkins slaves and then
+  # check to see if it has an opsworks state off offline, if so remove them.
 end
