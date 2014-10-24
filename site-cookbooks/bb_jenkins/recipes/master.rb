@@ -39,6 +39,7 @@ end
 
 %w[
   git
+  git-parameter
   thinBackup
   artifactdeployer
   github
