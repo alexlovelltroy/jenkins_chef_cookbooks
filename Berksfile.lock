@@ -1,6 +1,7 @@
 DEPENDENCIES
   bb_jenkins
     path: site-cookbooks/bb_jenkins
+  redis
 
 GRAPH
   7-zip (1.0.2)
@@ -15,16 +16,22 @@ GRAPH
     nodejs (>= 0.0.0)
   build-essential (2.1.2)
   chef_handler (1.1.6)
+  install_from (3.0.4)
   java (1.28.0)
   jenkins (2.1.2)
     apt (~> 2.0)
     runit (~> 1.5)
     yum (~> 3.0)
+  metachef (3.0.4)
   nodejs (2.1.0)
     apt (>= 0.0.0)
     ark (>= 0.0.0)
     build-essential (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  redis (3.0.4)
+    install_from (>= 0.0.0)
+    metachef (>= 0.0.0)
+    runit (>= 0.0.0)
   runit (1.5.10)
     build-essential (>= 0.0.0)
     yum (~> 3.0)
